@@ -1,8 +1,8 @@
 # spud-diy
 
-A collection of useful code for the RippleTech DIY controller
+A collection of example code for the RippleTech DIY controller.
 
-~[SPUD](spud.jpg)
+~[SPUD](https://github.com/racleave/spud-diy/blob/main/spud.jpg)
 
 
 This project is licensed under the terms of the MIT license.
