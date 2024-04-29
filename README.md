@@ -2,6 +2,6 @@
 
 A collection of example code for the RippleTech DIY controller.
 
-<img src="https://github.com/racleave/spud-diy/blob/main/spud.jpg" width="200">
+<img src="https://github.com/racleave/spud-diy/blob/main/spud.jpg" width="80%">
 
 This project is licensed under the terms of the MIT license.
