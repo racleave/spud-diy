@@ -1,0 +1,12 @@
+**/.pio
+
+*.zip
+*backups*
+
+# VisualStudioCode
+**/.vscode
+# Ignore all local history of files
+**/.history
+
+# Emacs files
+*~
