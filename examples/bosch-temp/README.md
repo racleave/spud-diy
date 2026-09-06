@@ -5,6 +5,7 @@ To read a Bosch Engine temperature sensor we need to modify the Analog Input cir
 
 If we remove both SMDs and add two 1% resistors:
 
+```text
 5V ───────── [ NTC Thermistor ]
                     │
              [ Resistor 1: 680 Ω ]
@@ -14,6 +15,7 @@ If we remove both SMDs and add two 1% resistors:
              [ Resistor 2: 1.2 kΩ ]
                     │
                    GND
+```
 
 Then these values give:
 
