@@ -13,27 +13,22 @@
 #define WATERPUMP_PWM_PERIOD_MS 500
 
 unsigned long t = 0;
-unsigned long tNMinus1 = 0;
+  unsigned long tNMinus1 = 0;
 
 //! Time in milliseconds of start of water pump PWM period.
 unsigned long tWaterPumpZero = 0;
 int waterPumpCommand = 10;
 
 /** The code to run a Nissan Leaf water pump at a reasonable speed.
-  
+
     Can't seem to make PWM frequency low enough, so doing this via a
     timer.
-
-    @todo This is nissan leaf specific, so it should maybe go into
-    leaf.cpp.
-
-    @todo No dead band here.
 
     @return 0 is OK.
 
 */
 int setWaterPumpSpeed(void) {
-     
+
      int waterPumpCommandOut = waterPumpCommand*WATERPUMP_PWM_PERIOD_MS;
      waterPumpCommandOut /= 100;
      if (t - tWaterPumpZero < WATERPUMP_PWM_PERIOD_MS) {
@@ -48,19 +43,18 @@ int setWaterPumpSpeed(void) {
      return 0;
 }
 
-/** Read single chars from the keyboard and change mode (testing
-    only).
+/** Read single chars from the keyboard and change command.
 
 */
 void readSerial()
 {
      if (Serial.available() > 0) {
           uint8_t readByte = Serial.read();
-          if (readByte == 'p') {
-               if (waterPumpCommand > 10)
+          if (readByte == 's') {
+               if (waterPumpCommand > 5)
                     waterPumpCommand--;
           }
-          else if (readByte == 'P') {
+          else if (readByte == 'f') {
                if (waterPumpCommand < 90)
                     waterPumpCommand++;
           }
@@ -75,7 +69,7 @@ void readSerial()
 void setup() {
 
      Serial.printf("Nissan Leaf pump example\n");
-     
+
      Serial.begin(115200);
      Serial.println("Serial output setup.");
 
@@ -96,4 +90,3 @@ void loop() {
           setWaterPumpSpeed();
      }
 }
- 
